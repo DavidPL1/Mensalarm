@@ -5,14 +5,14 @@ dependenciesMet=$true
 if command -v convert >/dev/null 2>&1 ; then
     echo "imagemagick found"
 else
-	dependenciesMet=$false
+    dependenciesMet=$false
     echo "imagemagick not found!"
 fi
 
 if command -v i3lock >/dev/null 2>&1 ; then
     echo "i3lock found"
 else
-	dependenciesMet=$true
+    dependenciesMet=$false
     echo "i3lock not found!"
 fi
 
@@ -38,10 +38,10 @@ if ($dependenciesMet); then
 		if [[ $now -ge $menstime ]];
 		then
 			convert -background white -size $SIZE \
-			-gravity Center \
-			-weight 700 -pointsize 200 \
-			caption:"Time to go mensing, my friend!" \
-			$IMAGE
+			    -gravity Center \
+			    -weight 700 -pointsize 200 \
+			    caption:"Time to go mensing, my friend!" \
+			    $IMAGE
 			i3lock -i $IMAGE	
 			rm $IMAGE
 			break
