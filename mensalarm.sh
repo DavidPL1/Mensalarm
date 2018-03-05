@@ -3,10 +3,10 @@
 dependenciesMet=$true
 
 if command -v convert >/dev/null 2>&1 ; then
-    echo "imagemagic found"
+    echo "imagemagick found"
 else
 	dependenciesMet=$false
-    echo "imagemagic not found!"
+    echo "imagemagick not found!"
 fi
 
 if command -v i3lock >/dev/null 2>&1 ; then
