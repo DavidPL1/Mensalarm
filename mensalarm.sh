@@ -17,7 +17,7 @@ else
 fi
 
 if ($dependenciesMet); then
-	echo "Enter todays mensing time (HH:MM:SS format)":
+	echo "Enter the next cafeten time (HH:MM:SS format)":
 	read var_time
 
 	menstime=$(date -d "$var_time" +%s)
@@ -30,7 +30,7 @@ if ($dependenciesMet); then
 
 	if [ $menstime \< $now ];
 		then
-		echo "I'm afraid, you already missed mensing time :("
+		echo "I'm afraid, you already missed cafeten time :("
 	else
 		while ($true)
 		do
@@ -40,7 +40,7 @@ if ($dependenciesMet); then
 			convert -background white -size $SIZE \
 			    -gravity Center \
 			    -weight 700 -pointsize 200 \
-			    caption:"Time to go mensing, my friend!" \
+			    caption:"Time for cafeten, my friend!" \
 			    $IMAGE
 			i3lock -i $IMAGE	
 			rm $IMAGE
